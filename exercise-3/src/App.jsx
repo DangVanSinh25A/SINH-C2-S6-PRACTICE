@@ -2,9 +2,9 @@ import React,{useState} from "react";
 
 function App() {
   /* You will need to use many state to keep the inut values and other needs */
-  const [a, setA] = useState(0);
-  const [b, setB] = useState(0);
-  const [ab, setAB] = useState(0);
+  const [a, setA] = React.useState(0);
+  const [b, setB] = React.useState(0);
+  const [ab, setAB] = React.useState(0);
 
   /* You will need some function to handle the key pressed and button events */ 
   const onA = () => {
@@ -15,7 +15,7 @@ function App() {
     console.log('The "A" key was released!');
   };
   const onAB = () => {
-    console.log('The "A" key was released!');
+    console.log('The "AB" key was released!');
   };
 
   return (
@@ -33,7 +33,7 @@ function App() {
 
       {/* When Compute buton is clicked, this input display the sum of the 2 numbers, or the error message in RED */}
       <input disabled value={ab}/>
-      <button onClick={(e) => setAB(a+b)}>Compute</button>
+      <button onClick={(e) => setAB(Number(a)+ Number(b))}>Compute</button>
     </main>
   );
 }
